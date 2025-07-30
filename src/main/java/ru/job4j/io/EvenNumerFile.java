@@ -2,6 +2,7 @@ package ru.job4j.io;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class EvenNumerFile {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class EvenNumerFile {
             while ((read = fis.read()) != -1) {
                 text.append((char) read);
             }
-            String[] strings = (text.toString().split(System.lineSeparator()));
+            String[] strings = text.toString().split(System.lineSeparator());
             for (String even : strings) {
                 if (Integer.parseInt(even) % 2 == 0) {
                     System.out.println(even);
