@@ -22,8 +22,6 @@ public class Config {
                 if (!(line.contains("#") || line.isEmpty())) {
                     String[] pair = line.split("=", 2);
                     values.put(pair[0], pair[1]);
-                } else if (line.length() < 2) {
-                    throw new IllegalArgumentException();
                 }
             }
         } catch (IOException e) {

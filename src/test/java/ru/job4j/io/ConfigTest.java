@@ -22,12 +22,4 @@ class ConfigTest {
         config.load();
         assertThat(config.value("name")).isEqualTo("Petr Arsentev");
     }
-
-    @Test
-    void whenIllegalArgumentIsPresent() {
-        String path = "data/illegalArgument.properties";
-        Config config = new Config(path);
-        assertThatThrownBy(() -> config.load())
-                .isInstanceOf(IllegalArgumentException.class);
-    }
 }
