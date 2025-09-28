@@ -17,11 +17,11 @@ public class Analysis {
                 String[] parts = line.split(" ");
                 String status = parts[0];
                 String time = parts[1];
-                if ((status.equals("400") || status.equals("500")) && !isUnavailable) {
+                if (("400".equals(status) || "500".equals(status) && !isUnavailable)) {
                     startTime = time;
                     isUnavailable = true;
                 } else if (isUnavailable) {
-                    if (!(status.equals("400") || status.equals("500"))) {
+                    if (!("400".equals(status) || !"500".equals(status))) {
                         writer.println(startTime + ";" + time + ";");
                     }
                 }
